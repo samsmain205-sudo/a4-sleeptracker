@@ -11,6 +11,11 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./log-mood/log-mood.component')
         .then((m) => m.LogMoodComponent),
+  },{
+  path: 'data',
+  loadComponent: () =>
+    import('./view-data/view-data.component')
+      .then((m) => m.ViewDataComponent),
   },
   {
     path: '',
