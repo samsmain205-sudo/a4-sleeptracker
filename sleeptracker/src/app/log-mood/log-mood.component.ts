@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
+import { IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton,IonCard, 
+  IonCardHeader, IonCardContent, IonCardTitle} from '@ionic/angular/standalone';
 import { SleepService } from '../services/sleep.service';
 import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
 
@@ -7,7 +8,8 @@ import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
   selector: 'app-log-mood',
   templateUrl: './log-mood.component.html',
   styleUrls: ['./log-mood.component.scss'],
-  imports: [IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
+  imports: [IonRange, IonHeader, IonToolbar, IonTitle, 
+    IonContent, IonButton, IonCard, IonCardHeader, IonCardContent, IonCardTitle],
 })
 export class LogMoodComponent {
   mood = 5;

@@ -6,7 +6,123 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-range min="0" max="10" value="5"></ion-range>
+<ion-content>
 
-<ion-range min="0" max="10" value="5" (ionChange)="updateMood($event)"></ion-range>
-<p>Current mood: {{ mood }}</p>
+<h2>How was your sleepines today?</h2>
+<ion-range
+  id="range-single"
+  aria-label="Custom range"
+  [min]="1"
+  [max]="7"
+  [value]="4"
+  [pin]="true"
+  [ticks]="true"
+  [snaps]="true"
+  (ionChange)="updateMood($event)"
+></ion-range>
+
+@if(mood === 1){
+  <ion-card>
+  <img alt="Cat with a laptop" src="/assets/awakecat.png" />
+  <ion-card-header>
+    <ion-card-title>We feel active, vital, alert, or even wide awake</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Remeber to drink water and use that energy for progress. 
+    Wether that be work or hobbies ignite today with that energy!
+  </ion-card-content>
+</ion-card>
+}
+
+@if(mood === 2){
+  <ion-card>
+  <img alt="Cat" src="/assets/2cat.png" />
+  <ion-card-header>
+    <ion-card-title>We're functioning at high levels, but not at peak; 
+      able to concentrate</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Although we may not be at peak energy levels we can focus on our goals big or 
+    small! Remember to celebrate small accomplishments today!
+  </ion-card-content>
+</ion-card>
+}
+
+@if(mood === 3){
+  <ion-card>
+  <img alt="Cat" src="/assets/3cat.png" />
+  <ion-card-header>
+    <ion-card-title>Today we feel awake but not relaxed; responsive but not alert</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Reminder to take breaks and use our energy of being awake for positive things today!
+     Move your body around and use snacks to regain some energy today. 
+  </ion-card-content>
+</ion-card>
+}
+
+
+@if(mood === 4){
+  <ion-card>
+  <img alt="Cat" src="/assets/4cat.png" />
+  <ion-card-header>
+    <ion-card-title>Today we may feel somewhat foggy or let down</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Although we may feel foggy remember to celebrate the small accomplishments. It's a
+     big accomplishment pushing yourself to wake up. Treat yourself to a sweet treat or 
+     anything that'll energize you.
+  </ion-card-content>
+</ion-card>
+}
+
+@if(mood === 5){
+  <ion-card>
+  <img alt="Cat" src="/assets/5cat.png" />
+  <ion-card-header>
+    <ion-card-title>Today we feel foggy; losing interest in remaining awake; slowed down</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Take naps when needed. Don't push yourself and let your body rest for the day 
+    either through breaks or food. Remember tommorow is always a new day
+  </ion-card-content>
+</ion-card>
+}
+
+@if(mood === 6){
+  <ion-card>
+  <img alt="Cat" src="/assets/6cat.png" />
+  <ion-card-header>
+    <ion-card-title> We currently feel sleep, woozy, fighting sleep or pefer to lay down.</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Never feel guilty in laying down for rest.
+    Remeber rest is the most important in keeping the mind sharp. Treat yourself today.
+  </ion-card-content>
+</ion-card>
+}
+
+@if(mood === 7){
+  <ion-card>
+  <img alt="Cat" src="/assets/Logo.png" />
+  <ion-card-header>
+    <ion-card-title> We feel like no longer fighting sleep; sleep onset soon; having dream-like thoughts</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    Don't push yourself too it's limits. It's important to take breaks to revive our energy!
+  </ion-card-content>
+</ion-card>
+}
+
+ <ion-button class="ion-margin-top" shape = "round" (click)="logMood()">
+    Save Current Mood/Sleepiness
+  </ion-button>
+
+</ion-content>
