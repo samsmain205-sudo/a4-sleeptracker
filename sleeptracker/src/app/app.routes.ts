@@ -13,6 +13,12 @@ export const routes: Routes = [
           import('./home/home.page').then((m) => m.HomePage),
       },
       {
+        path: 'mood',
+        loadComponent: () =>
+          import('./log-mood/log-mood.component')
+            .then((m) => m.LogMoodComponent),
+      },
+      {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full',
