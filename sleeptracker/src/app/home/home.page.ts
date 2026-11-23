@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { IonModal, IonHeader, IonToolbar, IonTitle, IonContent} from '@ionic/angular/standalone';
 import { IonDatetimeButton,
-    IonItem,
-    IonLabel,
     IonButton,
-    IonList,
-    IonListHeader,
     IonImg,
     IonGrid,
     IonRow,
@@ -33,12 +29,7 @@ import { IonDatetime } from '@ionic/angular/standalone';
     IonContent,
     IonDatetime,
     IonDatetimeButton,
-    IonItem,
-    IonLabel,
-    IonButton,
-    IonList,
-    IonListHeader,],
-
+    IonButton,],
 })
 export class HomePage {
   /* Format dates correctly */

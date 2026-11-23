@@ -1,3 +1,13 @@
-<p>
-  log-mood works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">
+      BetterSleep
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-range min="0" max="10" value="5"></ion-range>
+<button (click)="testClick()">Test Button</button>
+
+<ion-range min="0" max="10" value="5"></ion-range>
+<p>Current mood: {{ mood }}</p>
