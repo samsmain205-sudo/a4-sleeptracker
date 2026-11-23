@@ -9,10 +9,8 @@ import { IonDatetimeButton,
     IonText
    } from '@ionic/angular/standalone';
 import { SleepService } from '../services/sleep.service';
-import { SleepData } from '../data/sleep-data';
 import { FormsModule} from '@angular/forms';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
-import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
 import { IonDatetime } from '@ionic/angular/standalone';
 
 @Component({
@@ -20,16 +18,8 @@ import { IonDatetime } from '@ionic/angular/standalone';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
   imports: [FormsModule, IonModal, IonHeader, IonToolbar, IonTitle, IonContent, IonDatetime, IonGrid, IonRow, IonCol,
-	FormsModule,
-    IonHeader,
-    IonText,
-    IonImg,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonDatetime,
-    IonDatetimeButton,
-    IonButton,],
+	FormsModule,IonHeader,IonText,IonImg,
+    IonToolbar,IonTitle,IonContent,IonDatetime, IonDatetimeButton,IonButton,],
 })
 export class HomePage {
   /* Format dates correctly */

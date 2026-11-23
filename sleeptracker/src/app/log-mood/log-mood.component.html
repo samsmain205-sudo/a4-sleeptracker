@@ -7,7 +7,6 @@
 </ion-header>
 
 <ion-range min="0" max="10" value="5"></ion-range>
-<button (click)="testClick()">Test Button</button>
 
-<ion-range min="0" max="10" value="5"></ion-range>
+<ion-range min="0" max="10" value="5" (ionChange)="updateMood($event)"></ion-range>
 <p>Current mood: {{ mood }}</p>

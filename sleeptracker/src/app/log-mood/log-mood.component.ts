@@ -1,18 +1,28 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { IonRange, IonHeader, IonToolbar, IonTitle } from '@ionic/angular/standalone';
+import { IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton } from '@ionic/angular/standalone';
+import { SleepService } from '../services/sleep.service';
+import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
 
 @Component({
   selector: 'app-log-mood',
   templateUrl: './log-mood.component.html',
   styleUrls: ['./log-mood.component.scss'],
-  imports: [FormsModule, IonRange, IonHeader, IonToolbar, IonTitle],
+  imports: [IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton],
 })
 export class LogMoodComponent {
   mood = 5;
-  testClick() {
-  console.log('Button works!');
+
+  constructor(public sleepService: SleepService) {}
+
+  updateMood(event: CustomEvent) {
+    //console.log('ionChange emitted value:', event.detail.value);
+    const value = event.detail.value;
+     this.mood = value;
   }
 
-
+  logMood() {
+    this.sleepService.logSleepinessData(
+      new StanfordSleepinessData(this.mood)
+    );
+  }
 }
