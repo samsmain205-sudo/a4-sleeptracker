@@ -1,13 +1,11 @@
 <ion-tabs>
-  <ion-router-outlet></ion-router-outlet>
-
   <ion-tab-bar slot="bottom">
-    <ion-tab-button tab="home">
+    <ion-tab-button tab="home" routerLink="/home" routerDirection="root">
       <ion-icon name="home-outline"></ion-icon>
       <ion-label>Log Sleep</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="mood">
+    <ion-tab-button tab="mood" routerLink="/mood" routerDirection="root">
       <ion-icon name="accessibility-outline"></ion-icon>      
       <ion-label>Log Mood</ion-label> 
     </ion-tab-button>
