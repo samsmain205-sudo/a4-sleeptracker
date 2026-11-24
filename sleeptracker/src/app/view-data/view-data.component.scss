@@ -1,0 +1,27 @@
+ion-toolbar {
+  --background: #302634;
+  --color: #DED2C3; 
+}
+
+ion-content {
+  --background: url('/assets/background.png') center / cover no-repeat;
+  --color : #DED2C3;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-top: 16px;
+  --padding-bottom: 16px;
+}
+
+ion-list {
+  --background: #DED2C3;
+  background: #DED2C3;
+}
+
+ion-item {
+  --background: #DED2C3;
+  --border-color: transparent;
+}
+
+h1 {
+  background: #302634;
+}

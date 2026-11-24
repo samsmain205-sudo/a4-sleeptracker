@@ -1,3 +1,21 @@
-<p>
-  view-data works!
-</p>
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="header">
+      BetterSleep
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+     <h1>Logged Data</h1>
+ <ion-list>
+   @for (entry of allSleepData; track entry.id) {
+     <ion-item>
+       <ion-label>
+         <h2>{{ entry.dateString() }} </h2>
+         <p>{{ entry.summaryString() }} </p>
+        </ion-label>
+      </ion-item> 
+    x }
+  </ion-list>
+</ion-content>
