@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonLabel, IonListHeader, IonItem } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonLabel, IonItem } from '@ionic/angular/standalone';
 import { SleepService } from '../services/sleep.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { SleepService } from '../services/sleep.service';
   templateUrl: './view-data.component.html',
   styleUrls: ['./view-data.component.scss'],
   imports: [IonHeader, IonToolbar, IonTitle, 
-  IonContent, IonList, IonLabel, IonListHeader, IonItem ],
+  IonContent, IonList, IonLabel, IonItem ],
 })
 export class ViewDataComponent  implements OnInit {
 

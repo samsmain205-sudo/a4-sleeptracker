@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel } from '@ionic/angular/standalone';
 
+//import icons for navbar
 import { addIcons } from 'ionicons';
 import { homeOutline, accessibilityOutline, statsChartOutline} from 'ionicons/icons';
 
@@ -13,6 +14,7 @@ import { homeOutline, accessibilityOutline, statsChartOutline} from 'ionicons/ic
 })
 export class BottomNavbarComponent {
   constructor() {
+    //add icons for navbar
     addIcons({ homeOutline, accessibilityOutline, statsChartOutline });
   }
 }

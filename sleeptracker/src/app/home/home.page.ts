@@ -12,6 +12,7 @@ import { SleepService } from '../services/sleep.service';
 import { FormsModule} from '@angular/forms';
 import { OvernightSleepData } from '../data/overnight-sleep-data';
 import { IonDatetime } from '@ionic/angular/standalone';
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 @Component({
   selector: 'app-home',
@@ -39,10 +40,26 @@ export class HomePage {
 	}
 
 	/*Based on user input return day and time */
-	logSleep() {
+	async logSleep() {
     const start = new Date(this.sleepStartISO);
     const end = new Date(this.sleepEndISO);
     this.sleepService.logOvernightData(new OvernightSleepData(start, end));
+
+
+    await LocalNotifications.requestPermissions();
+    //Content from slides from lecture 15-device_resources_signals
+    const notifs = await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: 'Log your mood',
+          body: 'Remember to record how you feel today.',
+          id: 1,
+          schedule: { at: new Date(Date.now() + 1000 * 5) },
+        },
+      ],
+    });
+
+    console.log('Scheduled mood notification', notifs);
   }
 
 }

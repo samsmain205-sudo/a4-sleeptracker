@@ -3,6 +3,7 @@ import { IonRange, IonHeader, IonToolbar, IonTitle, IonContent, IonButton,IonCar
   IonCardHeader, IonCardContent, IonCardTitle} from '@ionic/angular/standalone';
 import { SleepService } from '../services/sleep.service';
 import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
+import { LocalNotifications } from '@capacitor/local-notifications';
 
 @Component({
   selector: 'app-log-mood',
@@ -12,7 +13,7 @@ import { StanfordSleepinessData } from '../data/stanford-sleepiness-data';
     IonContent, IonButton, IonCard, IonCardHeader, IonCardContent, IonCardTitle],
 })
 export class LogMoodComponent {
-  mood = 5;
+  mood = 4;
 
   constructor(public sleepService: SleepService) {}
 
@@ -22,9 +23,23 @@ export class LogMoodComponent {
      this.mood = value;
   }
 
-  logMood() {
+  async logMood() {
     this.sleepService.logSleepinessData(
       new StanfordSleepinessData(this.mood)
     );
+    await LocalNotifications.requestPermissions();
+    //Content from slides from lecture 15-device_resources_signals
+    const notifs = await LocalNotifications.schedule({
+      notifications: [
+        {
+          title: 'Log your sleep',
+          body: 'Remember to record if you slept today',
+          id: 2,
+          schedule: { at: new Date(Date.now() + 1000 * 5) },
+        },
+      ],
+    });
+
+    console.log('Scheduled sleep notification', notifs);
   }
 }
