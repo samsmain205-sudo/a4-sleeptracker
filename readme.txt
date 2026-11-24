@@ -22,7 +22,7 @@
 
 
 4. What classmates or other individuals did you consult as part of this assignment? What did you discuss?
-  None :).
+  Discussed on using Xcode as a simulator, such as knowing that files had the most current version.
 
 
 5. Is there anything special we need to know in order to run your code?
@@ -37,7 +37,7 @@
 
 
 7. Did you design your app specifically for iOS or Android, or both?
-  Both, since it used basic features such as a bottom navigation bar with labeling. As well as simple ways to log and view information, keeping the design of the app simple and intuitive.
+  Both, since it used basic features such as a bottom navigation bar with labeling. As well as simple ways to log and view information, keeping the design of the app simple and intuitive but simulated for IOS.
 
 
 8. How can a person log overnight sleep in your app? Why did you choose to support logging overnight sleep in this way?
