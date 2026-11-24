@@ -1,3 +1,4 @@
+<!-- Top part of APP -->
 <ion-header>
   <ion-toolbar>
     <ion-title class="header">
@@ -7,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-
+<!-- Knob to log in user mood/sleepiness -->
 <h2>How was your sleepines today?</h2>
 <ion-range
   id="range-single"
@@ -21,6 +22,7 @@
   (ionChange)="updateMood($event)"
 ></ion-range>
 
+<!-- Show ion cards based on mood with sigma advice-->
 @if(mood === 1){
   <ion-card>
   <img alt="Cat with a laptop" src="/assets/awakecat.png" />
@@ -121,6 +123,7 @@
 </ion-card>
 }
 
+<!-- Send mood back -->
  <ion-button class="ion-margin-top" shape = "round" (click)="logMood()">
     Save Current Mood/Sleepiness
   </ion-button>
